@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useCallback, useEffect, useState } from "react";
@@ -41,7 +40,7 @@ const Modal: React.FC<ModalProps> = ({
     if (disabled) {
       return;
     }
-
+  
     setShowModal(false);
     setTimeout(() => {
       onClose();
@@ -147,9 +146,9 @@ const Modal: React.FC<ModalProps> = ({
                 >
                   <IoMdClose size={18} />
                 </button>
-                <h3 className="text-lg font-semibold">
+                <div className="text-lg font-semibold">
                   {title}
-                </h3>
+                </div>
               </div>
               {/*body*/}
               <div className="relative p-6 flex-auto">
@@ -157,7 +156,15 @@ const Modal: React.FC<ModalProps> = ({
               </div>
               {/*footer*/}
               <div className="flex flex-col gap-2 p-6">
-                <div className="flex flex-row items-center gap-4 w-full">
+                <div 
+                  className="
+                    flex 
+                    flex-row 
+                    items-center 
+                    gap-2 
+                    w-full
+                  "
+                >
                   {secondaryAction && secondaryActionLabel && (
                     <Button 
                       disabled={disabled} 

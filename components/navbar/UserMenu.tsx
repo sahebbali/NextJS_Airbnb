@@ -6,7 +6,7 @@ import { useCallback, useState } from 'react'
 import MenuItem from './ManuItem'
 import useRegisterModal from '@/hooks/useRegisterModal'
 import useLoginModal from '@/hooks/useLoginModal'
-import {User} from '@prisma/client'
+import useRentModal from '@/hooks/useRentModal'
 import {signOut} from 'next-auth/react'
 import { SafeUser } from '@/types'
 interface UserMenuProps{
@@ -15,6 +15,7 @@ interface UserMenuProps{
 const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
+  const rentModal = useRentModal();
   const router = useRouter();
   const [isOpen, setIsOpen] =useState (false);
 
@@ -22,24 +23,24 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
     setIsOpen((value)=> !value);
   },[])
 
-  // const onRent = useCallback(() => {
-  //   if (!currentUser) {
-  //     return loginModal.onOpen();
-  //   }
+  const onRent = useCallback(() => {
+    if (!currentUser) {
+      return loginModal.onOpen();
+    }
 
-  //   rentModal.onOpen();
-  // }, [loginModal, rentModal, currentUser]);
+    rentModal.onOpen();
+  }, [loginModal, rentModal, currentUser]);
 
   return (
     <div className="relative">
         <div className="flex flex-row items-center gap-3" >
-            <div className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 tranition cursor-pointer" >
+            <div onClick={onRent} className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 tranition cursor-pointer" >
                 Airbnb your home
             </div>
             <div onClick={taggleOpen} className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center rounded-full cousor-pointer hover:shadow-md transition">
             <AiOutlineMenu />
             <div className='hidden md:block'>
-                <Avatar />
+                <Avatar src={currentUser?.image} />
             </div>
             </div>
         </div>
@@ -68,7 +69,7 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
                 />
                 <MenuItem 
                   label="Airbnb your home" 
-                  onClick={()=>{}}
+                  onClick={()=>rentModal.onOpen}
                 />
                 <hr />
                 <MenuItem 

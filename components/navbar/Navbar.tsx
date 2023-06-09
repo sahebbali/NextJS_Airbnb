@@ -1,6 +1,7 @@
 'use client'
 
 import Container from "../Conitainer";
+import Categories from "./Categories";
 import Logo from "./Logo";
 import Serarch from "./Serarch";
 import UserMenu from "./UserMenu";
@@ -24,6 +25,7 @@ return(
                
             </Container>
         </div>
+        <Categories />
     </div>
 )
 }

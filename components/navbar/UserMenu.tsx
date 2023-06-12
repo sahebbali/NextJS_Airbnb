@@ -53,19 +53,32 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
                     <>
                       <MenuItem 
                   label="My trips" 
-                  onClick={() => router.push('/trips')}
+                  onClick={() =>{
+                    router.push('/trips')
+                    setIsOpen((value)=> !value);
+                  }}
                 />
                 <MenuItem 
                   label="My favorites" 
-                  onClick={() => router.push('/favorites')}
+                  onClick={() => {
+                    router.push('/favorites')
+                    setIsOpen((value)=> !value);
+
+                  }}
                 />
                 <MenuItem 
                   label="My reservations" 
-                  onClick={() => router.push('/reservations')}
+                  onClick={() => {
+                    router.push('/reservations')
+                    setIsOpen((value)=> !value);
+                  }}
                 />
                 <MenuItem 
                   label="My properties" 
-                  onClick={() => router.push('/properties')}
+                  onClick={() => {
+                  router.push('/properties')
+                  setIsOpen((value)=> !value);
+                }}
                 />
                 <MenuItem 
                   label="Airbnb your home" 
@@ -84,10 +97,10 @@ const UserMenu: React.FC<UserMenuProps> = ({currentUser}) => {
                             label="Login"
                             onClick= {loginModal.onOpen}
                             />
-                      <MenuItem 
-                        label="Sign up"
-                        onClick= {registerModal.onOpen}
-                        />
+                            <MenuItem 
+                              label="Sign up"
+                              onClick= {registerModal.onOpen}
+                              />
                       </>
                   )
                 }

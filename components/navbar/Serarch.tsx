@@ -39,12 +39,13 @@ const Serarch = () => {
         return 'Any Week'
     },[startDate, endDate]);
 
-    const guestLabel = useMemo(()=>{
-        if(guestCount){
-            return `${guestCount} Guests`;
+    const guestLabel = useMemo(() => {
+        if (guestCount) {
+          return `${guestCount} Guests`;
         }
-        return "add Guests"
-    },[])
+    
+        return 'Add Guests';
+      }, [guestCount]);
 
   return (
     <div onClick={searchModal.onOpen}

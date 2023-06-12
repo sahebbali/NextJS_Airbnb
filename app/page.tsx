@@ -1,11 +1,10 @@
-import Image from 'next/image'
 import getListings, {IListingsParams} from './actions/getListings';
 import getCurrentUser from './actions/getCurrentUser';
 import ClientOnly from '@/components/ClientOnly';
 import EmptyState from '@/components/EmptyState';
 import Container from '@/components/Conitainer';
 import ListingCard from '@/components/listings/ListingCard';
-import { error } from 'console';
+import Footer from '@/components/Footer';
 
 
 interface HomeProps {
@@ -39,6 +38,7 @@ const Home= async ({searchParams} : HomeProps)=> {
             ))
           }
         </div>
+      <Footer />
       </Container>
     </ClientOnly>
   )

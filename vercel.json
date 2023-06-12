@@ -1,0 +1,6 @@
+{"build": {
+    "commands": [
+      "npm run build",
+      "prisma generate"
+    ]
+  }}

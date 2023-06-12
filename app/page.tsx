@@ -5,6 +5,7 @@ import ClientOnly from '@/components/ClientOnly';
 import EmptyState from '@/components/EmptyState';
 import Container from '@/components/Conitainer';
 import ListingCard from '@/components/listings/ListingCard';
+import { error } from 'console';
 
 
 interface HomeProps {
@@ -21,6 +22,8 @@ const Home= async ({searchParams} : HomeProps)=> {
       </ClientOnly>
     )
   }
+
+ 
   return (
     <ClientOnly>
       <Container>

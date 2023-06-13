@@ -1,0 +1,8 @@
+{
+    "builds": [
+      { "src": "prisma", "use": "@prisma/cli" },
+      { "src": "next.config.js", "use": "@vercel/next" },
+      { "src": "package.json", "use": "@vercel/node" }
+    ],
+    "version": 2
+  }

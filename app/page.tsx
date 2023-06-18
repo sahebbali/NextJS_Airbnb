@@ -4,7 +4,6 @@ import ClientOnly from '@/components/ClientOnly';
 import EmptyState from '@/components/EmptyState';
 import Container from '@/components/Conitainer';
 import ListingCard from '@/components/listings/ListingCard';
-import Footer from '@/components/Footer';
 
 
 interface HomeProps {

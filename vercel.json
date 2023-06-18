@@ -5,5 +5,10 @@
       { "src": "package.json", "use": "@vercel/node" }
       
     ],
+    "prerun": {
+      "npm": {
+        "run": "prisma generate"
+      }
+    },
     "version": 2
   }

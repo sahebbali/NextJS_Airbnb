@@ -6,8 +6,5 @@
     }
   ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }],
-  "version": 2,
-  "config": {
-    "listing": true
-  }
+  "version": 2
 }

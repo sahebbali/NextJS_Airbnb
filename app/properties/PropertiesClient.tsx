@@ -31,7 +31,7 @@ const PropertiesClient:React.FC<PropertiesClientProps> = ({listings, currentUser
         .finally(()=>{
             setDeleteingId('');
         })
-    },[])
+    },[router])
   return (
     <Container>
     <Heading
